@@ -32,6 +32,8 @@ def vlookup(
     数据工作薄：根据模板工作薄提供的条件（列）在数据工作薄中查找，提供数据来源的工作薄
     注意！函数执行完后，只对wb_template对象进行了数据写入。在函数外部还需wb_template.save("filename.xlsx"),vlookup后的数据才能保存为excel表。
 
+    20210808 test OK
+
     :param:
         'wb_template': 主工作薄对象
         'ws_template_index': 需要处理的主工作表索引号
