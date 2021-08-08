@@ -9,6 +9,7 @@
 # @gitee : https://gitee.com/karinlee/
 # @Personal website : https://karinlee.cn/
 
+import os
 import openpyxl
 import tkinter as tk
 import tkinter.filedialog
@@ -17,6 +18,8 @@ from exceler import vlookup
 class VlookupGui(object):
     """
     python实现vlookup图形工具
+
+    20210808 test OK
     """
     def __init__(self):
         """
@@ -153,7 +156,7 @@ class VlookupGui(object):
         line = self.v7.get()
         # 进行vlookup处理
         vlookup(wb_template,ws_template_index,template_key,template_value,wb_source,ws_source_index,source_key,source_value,line)
-        wb_template.save(self.temp_path.get().replace('.xlsx','')+'_已进行vlookup.xlsx')
+        wb_template.save(os.path.basename(self.temp_path.get()).replace('.xlsx','')+'_已进行vlookup.xlsx')
         # 标志设置为处理完成
         self.flag.set("处理完成！")
 
