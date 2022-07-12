@@ -23,14 +23,14 @@ class WorksheetSplitByColumn(object):
     20220712 test OK
     """
 
-
-    def __init__(self,filepath,column_index:int,title_index:int,isprint:bool=False):
+    def __init__(self,filepath:str,column_index:int,title_index:int,isprint:bool=False):
 
         """
 
         :param filepath: excel xlsx文件路径
         :param column_index: 按哪列的内容进行拆分（A列为1，B列为2,C列为3...）
         :param title_index: 表头的行数（从1开始，即表头有几行就填写几行）
+        :param isprint: 是否拆分后自动打印（默认为False,即不启用打印功能）
 
         """
         # 获取文件路径
@@ -106,8 +106,8 @@ class WorksheetSplitByColumn(object):
 
 if __name__ == '__main__':
     workbook_path = 'tests\\test_worksheet_split_by_column\\按列拆分测试表.xlsx'
-    app = WorksheetSplitByColumn(filepath=workbook_path,column_index=4,title_index=4,isprint=False)
-    app.main()
+    instance = WorksheetSplitByColumn(filepath=workbook_path,column_index=4,title_index=4,isprint=False)
+    instance.main()
 
 
 
