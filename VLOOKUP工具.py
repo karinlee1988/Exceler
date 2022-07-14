@@ -152,7 +152,7 @@ class EasyVlookupGui(object):
         ws_source_index = int(self.v4.get())
         source_key = self.v5.get()
         source_value = self.v6.get()
-        line = self.v7.get()
+        line = int(self.v7.get())
         # 进行vlookup处理
         easyvlookup(wb_main=wb_main,
                     ws_main_index=ws_main_index,
