@@ -17,7 +17,7 @@
 ### 开始使用
 每项功能均建立单独的.py文件，若要使用某项功能，则直接运行该.py文件即可。
 
-
+部分.py里有图形界面类 `class XXXGUI（object）` 提供图形界面。
 
 ---
 
@@ -65,3 +65,77 @@ if __name__ == '__main__':
 
 ---
 
+#### easy_vlookup.py
+
+**说明：**功能类似excel中的vlookup函数，用于多表数据匹配对碰使用。一般情况下运行速度比excel vlookup函数要快。
+
+**结构：**
+
+```python
+def easyvlookup(
+        wb_main,
+        ws_main_index:int,
+        main_key:str,
+        main_value:str,
+        wb_source,
+        ws_source_index:int,
+        source_key:str,
+        source_value:str,
+        line:int
+        ) -> None:
+    """
+    对2个不同的工作薄执行vlookup操作
+
+    主工作薄：需要写入数据的工作薄
+    数据工作薄：根据模板工作薄提供的条件（列）在数据工作薄中查找，提供数据来源的工作薄
+    注意！函数执行完后，只对wb_main对象进行了数据写入。在函数外部还需wb_main.save("filename.xlsx"),vlookup后的数据才能保存为excel表。
+
+    20220714 test OK
+
+    :param:
+        'wb_main': 主工作薄对象
+        'ws_main_index': 需要处理的主工作表索引号
+        'main_key': 主工作表key所在列号
+        'main_value': 主工作表value需要填写的列号
+        'wb_source': 数据工作薄对象
+        'ws_source_index': 需要处理的数据工作表索引号
+        'source_key':  数据工作表key所在列号
+        'source_value': 数据工作表value所在列号
+        'line' :从第几行开始vlookup
+
+    :type:
+        'wb_main': class Workbook
+        'ws_main_index': int
+        'main_key': str
+        'main_value': str
+        'wb_source': class Workbook
+        'ws_source_index': int
+        'source_key':  str
+        'source_value': str
+        'line' :int
+
+    :return: None
+
+    """
+```
+
+**调用示例：**
+
+```python
+if __name__ == '__main__':
+    # 以下调用easyvlookup()函数 例1
+    wbmain = openpyxl.load_workbook('tests\\tests_easy_vlookup\\主表.xlsx')
+    wbsource = openpyxl.load_workbook('tests\\tests_easy_vlookup\\数据表.xlsx')
+    easyvlookup(wb_main=wbmain,
+                ws_main_index=1,
+                main_key='B',
+                main_value='D',
+                wb_source=wbsource,
+                ws_source_index=2,
+                source_key='K',
+                source_value='J',
+                line=2)
+    wbmain.save('已进行vlookup.xlsx')
+```
+
+easy_vlookup.py 提供`EasyVlookupGui(object)`图形界面类，通过`app = EasyVlookupGui()`调用运行图形界面。
