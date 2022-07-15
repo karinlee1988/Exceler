@@ -249,8 +249,8 @@ class EasyVlookupGui(object):
 
 if __name__ == '__main__':
     # 以下调用easyvlookup()函数 例1
-    # wbmain = openpyxl.load_workbook('tests\\tests_easy_vlookup\\主表.xlsx')
-    # wbsource = openpyxl.load_workbook('tests\\tests_easy_vlookup\\数据表.xlsx')
+    # wbmain = openpyxl.load_workbook('tests\\test_easy_vlookup\\主表.xlsx')
+    # wbsource = openpyxl.load_workbook('tests\\test_easy_vlookup\\数据表.xlsx')
     # easyvlookup(wb_main=wbmain,
     #             ws_main_index=1,
     #             main_key='B',
@@ -263,8 +263,8 @@ if __name__ == '__main__':
     # wbmain.save('已进行vlookup.xlsx')
     #--------------------------------------------
     ## 以下调用easyvlookup()函数 例2
-    # wbmain = openpyxl.load_workbook('tests\\tests_easy_vlookup\\20220615_2021年度失业保险支持企业稳定岗位返名单（大型企业返还比例从30%转为50%）(添加银行信息).xlsx')
-    # wbsource = openpyxl.load_workbook('tests\\tests_easy_vlookup\\全市2021年度失业保险稳岗返还企业数据 20220418整理(市局王岳岳20220419提供).xlsx')
+    # wbmain = openpyxl.load_workbook('tests\\test_easy_vlookup\\20220615_2021年度失业保险支持企业稳定岗位返名单（大型企业返还比例从30%转为50%）(添加银行信息).xlsx')
+    # wbsource = openpyxl.load_workbook('tests\\test_easy_vlookup\\全市2021年度失业保险稳岗返还企业数据 20220418整理(市局20220419提供).xlsx')
     # easyvlookup(wb_main=wbmain,
     #             ws_main_index=1,
     #             main_key='D',

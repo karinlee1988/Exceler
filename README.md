@@ -124,8 +124,8 @@ def easyvlookup(
 ```python
 if __name__ == '__main__':
     # 以下调用easyvlookup()函数 例1
-    wbmain = openpyxl.load_workbook('tests\\tests_easy_vlookup\\主表.xlsx')
-    wbsource = openpyxl.load_workbook('tests\\tests_easy_vlookup\\数据表.xlsx')
+    wbmain = openpyxl.load_workbook('tests\\test_easy_vlookup\\主表.xlsx')
+    wbsource = openpyxl.load_workbook('tests\\test_easy_vlookup\\数据表.xlsx')
     easyvlookup(wb_main=wbmain,
                 ws_main_index=1,
                 main_key='B',
