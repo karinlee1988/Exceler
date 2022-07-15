@@ -138,4 +138,4 @@ if __name__ == '__main__':
     wbmain.save('已进行vlookup.xlsx')
 ```
 
-easy_vlookup.py 提供`EasyVlookupGui(object)`图形界面类，通过`app = EasyVlookupGui()`调用运行图形界面。
+**easy_vlookup.py** 提供`EasyVlookupGui(object)`图形界面类，通过`app = EasyVlookupGui()`调用运行图形界面。
