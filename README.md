@@ -139,3 +139,37 @@ if __name__ == '__main__':
 ```
 
 **easy_vlookup.py** 提供`EasyVlookupGui(object)`图形界面类，通过`app = EasyVlookupGui()`调用运行图形界面。
+
+---
+
+
+#### worksheets_save_as.py
+
+**说明：**将一个工作薄里面的多个工作表分别另存为独立的工作薄，独立的工作薄名称为原工作薄各工作表表名。
+
+**结构：**
+
+```python
+def worksheet_save_as(workbook_fullfilename:str) -> None:
+    """
+    将一个工作薄里面的多个工作表分别另存为独立的工作薄，独立的工作薄名称为原工作薄各工作表表名
+    注意：拆分后表格格式可能有所变化
+
+    20220928 test OK
+
+    :param workbook_fullfilename:需要进行工作表另存为的.xlsx文件全文件名
+    :type workbook_fullfilename: str
+
+    :return: None
+
+    """
+```
+
+**调用示例：**
+
+```python
+if __name__ == '__main__':
+    wb = 'tests\\test_worksheets_save_as\\拆分工作表测试.xlsx'
+    worksheet_save_as(wb)
+```
+
