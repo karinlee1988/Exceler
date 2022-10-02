@@ -25,7 +25,7 @@
 
 #### worksheet_split_by_column.py
 
-**说明：**用于按列的内容拆分excel .XLSX工作薄中的一个工作表，分别另存为多个独立的工作薄。打印可选。
+**说明：**    用于按列的内容拆分excel .XLSX工作薄中的一个工作表，分别另存为多个独立的工作薄。打印可选。
 
 **结构：**
 
@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
 #### easy_vlookup.py
 
-**说明：**功能类似excel中的vlookup函数，用于多表数据匹配对碰使用。一般情况下运行速度比excel vlookup函数要快。
+**说明：**    功能类似excel中的vlookup函数，用于多表数据匹配对碰使用。一般情况下运行速度比excel vlookup函数要快。
 
 **结构：**
 
@@ -138,14 +138,14 @@ if __name__ == '__main__':
     wbmain.save('已进行vlookup.xlsx')
 ```
 
-**easy_vlookup.py** 提供`EasyVlookupGui(object)`图形界面类，通过`app = EasyVlookupGui()`调用运行图形界面。
+**easy_vlookup.py**     提供`EasyVlookupGui(object)`图形界面类，通过`app = EasyVlookupGui()`调用运行图形界面。
 
 ---
 
 
 #### worksheets_save_as.py
 
-**说明：**将一个工作薄里面的多个工作表分别另存为独立的工作薄，独立的工作薄名称为原工作薄各工作表表名。
+**说明：**    将一个工作薄里面的多个工作表分别另存为独立的工作薄，独立的工作薄名称为原工作薄各工作表表名。
 
 **结构：**
 
@@ -177,14 +177,14 @@ if __name__ == '__main__':
 
 ---
 
-#### worksheet_split_regular_line.py
+#### worksheet_split_by_regular_line.py
 
-**说明：**  按照固定行数将单个工作表拆分为多个工作表(如将1个3000行的表格拆分为3个1000行的表格)，表头默认为1行。对于工作薄，操作对象默认为工作薄的第一个工作表。
+**说明：**      按照固定行数将单个工作表拆分为多个工作表(如将1个3000行的表格拆分为3个1000行的表格)，表头默认为1行。对于工作薄，操作对象默认为工作薄的第一个工作表。
 
 **结构：**
 
 ```python
-class WorksheetSplitRegularLine(object):
+class WorksheetSplitByRegularLine(object):
     """
     按照固定行数将单个工作表拆分为多个工作表(如将1个3000行的表格拆分为3个1000行的表格)
     表头默认为1行
@@ -208,6 +208,6 @@ class WorksheetSplitRegularLine(object):
 
 ```python
 if __name__ == '__main__':
-	cut = WorksheetSplitRegularLine("tests\\test_worksheet_split_regular_line\\固定行数拆分测试.xlsx",100)
+	cut = WorksheetSplitByRegularLine("tests\\test_worksheet_split_by_regular_line\\固定行数拆分测试.xlsx",100)
     cut.main()
 ```

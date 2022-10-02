@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time : 2022/10/2 23:09
 # @Author : karinlee
-# @FileName : worksheet_split_regular_line.py
+# @FileName : worksheet_split_by_regular_line.py
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 # @github : https://github.com/karinlee1988/
@@ -12,7 +12,7 @@
 import os
 import openpyxl
 
-class WorksheetSplitRegularLine(object):
+class WorksheetSplitByRegularLine(object):
     """
     按照固定行数将单个工作表拆分为多个工作表(如将1个3000行的表格拆分为3个1000行的表格)
     表头默认为1行
@@ -94,5 +94,5 @@ class WorksheetSplitRegularLine(object):
             self.one_sheet(lines_,pt)
 
 if __name__ == '__main__':
-    cut = WorksheetSplitRegularLine("tests\\test_worksheet_split_regular_line\\固定行数拆分测试.xlsx",100)
+    cut = WorksheetSplitByRegularLine("tests\\test_worksheet_split_by_regular_line\\固定行数拆分测试.xlsx",100)
     cut.main()
