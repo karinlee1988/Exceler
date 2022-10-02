@@ -94,7 +94,5 @@ class WorksheetSplitRegularLine(object):
             self.one_sheet(lines_,pt)
 
 if __name__ == '__main__':
-    # mer = MergeXlsxWorkbooks(r'C:\LIJIALIN\BaiduNetdiskWorkspace\HOME\学习\PYTHON\GitHub和Gitee仓库\Exceler\tests\各单位汇总_xlsx')
-    # mer.merge_xlsx_workbooks(1,3,'C')
     cut = WorksheetSplitRegularLine("tests\\test_worksheet_split_regular_line\\固定行数拆分测试.xlsx",100)
     cut.main()
