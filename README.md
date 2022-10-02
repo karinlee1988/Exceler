@@ -173,3 +173,41 @@ if __name__ == '__main__':
     worksheet_save_as(wb)
 ```
 
+
+
+---
+
+#### worksheet_split_regular_line.py
+
+**说明：**  按照固定行数将单个工作表拆分为多个工作表(如将1个3000行的表格拆分为3个1000行的表格)，表头默认为1行。对于工作薄，操作对象默认为工作薄的第一个工作表。
+
+**结构：**
+
+```python
+class WorksheetSplitRegularLine(object):
+    """
+    按照固定行数将单个工作表拆分为多个工作表(如将1个3000行的表格拆分为3个1000行的表格)
+    表头默认为1行
+    对于工作薄，操作对象默认为工作薄的第一个工作表
+
+    20221002 test OK
+    """
+
+    def __init__(self,full_filename:str,batche_num:int or str):
+        """
+
+        :param full_filename: 待拆分xlsx文件的全文件名（相对路径或绝对路径）
+        :param batche_num: 需要拆分的固定行数
+
+        :type full_filename: str
+        :type batche_num: int or str
+        """
+```
+
+**调用示例：**
+
+```python
+if __name__ == '__main__':
+	cut = WorksheetSplitRegularLine("tests\\test_worksheet_split_regular_line\\固定行数拆分测试.xlsx",100)
+    cut.main()
+```
