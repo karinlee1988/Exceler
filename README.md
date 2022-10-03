@@ -211,3 +211,69 @@ if __name__ == '__main__':
 	cut = WorksheetSplitByRegularLine("tests\\test_worksheet_split_by_regular_line\\固定行数拆分测试.xlsx",100)
     cut.main()
 ```
+
+
+
+---
+#### merge_worksheets.py
+
+**说明：**      将某个文件夹下面所有的.xlsx文件中某个sheet页的内容合并,生成一个工作薄，仅支持.xlsx格式。合并后的工作薄第一列的内容会指明该行内容来源为哪个.xlsx文件。程序运行后，生成 ‘合并完成.xlsx’的合并文件。
+
+**结构：**
+
+- MergeXlsxWorkSheets(object)类
+
+```python
+class MergeXlsxWorkSheets(object):
+    """
+    将某个文件夹下面所有的.xlsx文件中某个sheet页的内容合并,生成一个工作薄
+        仅支持.xlsx格式
+        合并后的工作薄第一列的内容会指明该行内容来源为哪个.xlsx文件
+
+    20221004 test OK
+
+    """
+
+    def __init__(self,folder_path:str):
+        """
+        :param folder_path: 待合并工作薄文件夹路径
+        :type folder_path: str
+        """
+        self.folder_path = folder_path
+```
+
+- MergeXlsxWorkSheets(object)类中的merge_xlsx_workbooks(self,...) 实例方法
+
+```python
+    def merge_xlsx_workbooks(self,
+                             sheet_index:str or int, 
+                             title_row:str or int ,
+                             solid_column:str) -> None:
+        """
+        合并主程序入口
+
+        :param sheet_index: 待合并的sheet页(从1开始)
+        :type sheet_index: str or int
+
+        :param title_row: 表头行数（从1开始）
+        :type title_row: str or int
+
+        :param solid_column: 按照某列存在的数据进行合并，避免合并空行(列号)
+        :type solid_column: str
+
+        :return: None
+        :rtype:  None
+        """
+```
+
+
+**调用示例：**
+
+先传入待合并xlsx文件的文件夹路径，实例化后传入工作表序号（从1开始）、表头行数（从1开始）、检测列号（检测是否为空行）后运行合并，生成 ‘合并完成.xlsx’的合并文件。
+
+```python
+if __name__ == '__main__':
+    merger = MergeXlsxWorkSheets('tests\\test_merge_worksheets')
+    merger.merge_xlsx_workbooks(sheet_index=1,title_row=3,solid_column='C')
+
+```
