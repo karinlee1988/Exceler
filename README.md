@@ -19,6 +19,8 @@
 
 部分.py里有图形界面类 `class XXXGUI（object）` 提供图形界面。
 
+独立的VBA文件夹里包含了一些excel VBA 工具。
+
 ---
 
 
@@ -277,3 +279,13 @@ if __name__ == '__main__':
     merger.merge_xlsx_workbooks(sheet_index=1,title_row=3,solid_column='C')
 
 ```
+---
+
+### VBA文件夹
+
+####  将xls文件批量转为xlsx文件
+
+该文件夹包含了可以将.xls文件批量转为.xlsx文件的工具：`Convert2xlsx.xlsm`
+
+打开后按里面的指引运行宏即可。
+
